@@ -1,0 +1,33 @@
+{
+  "_": "This is an example config. View config.py for more options",
+  "account": {
+    "username": "foobar",
+    "password": "hunter2"
+  },
+  "mail": {
+    "to": "foobar@mynixplay.com",
+    "from": "robot@example.com",
+    "smtp": {
+      "server": "smtp.example.com",
+      "username": "robot@example.com",
+      "password": "hunter2"
+    }
+  },
+  "settings": {
+    "log_level": "info",
+    "db": "app.db"
+  },
+  "friends": {
+    "joebob": {},
+    "someoneelse": {},
+    "privateprincess": {
+      "whitelist": [
+        "whitelist doesn't work yet"
+      ],
+      "blacklist": [
+        "neither does blacklist"
+      ]
+    }
+  }
+}
+

@@ -1,0 +1,5 @@
+*.pyc
+*.db
+config.json
+venv/
+*.log
