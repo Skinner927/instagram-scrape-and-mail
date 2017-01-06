@@ -89,7 +89,7 @@ def _scrape_ig_and_mail_user_media(user, user_prefs, scraper):
     logger.info('%s new images.' % len(
         [m for m in new_media if m.type == MediaTypeEnum.image]))
     logger.info('%s new videos.' % len(
-        [m for m in new_media if m.type == MediaTypeEnum.image]))
+        [m for m in new_media if m.type == MediaTypeEnum.video]))
     if len(new_media) == 0:
         return
 
