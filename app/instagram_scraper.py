@@ -195,8 +195,12 @@ class InstagramScraper(object):
     @staticmethod
     def set_media_url(item):
         """Sets the media url"""
-        item['url'] = \
-            item[item['type'] + 's']['standard_resolution']['url'].split('?')[0]
+        if item['type'] == 'carousel':
+            item['url'] = \
+                item['images']['standard_resolution']['url'].split('?')[0]
+        else:
+            item['url'] = \
+                item[item['type'] + 's']['standard_resolution']['url'].split('?')[0]
         # remove dimensions to get largest image
         item['url'] = re.sub(r'/s\d{3,}x\d{3,}/', '/', item['url'])
         return item

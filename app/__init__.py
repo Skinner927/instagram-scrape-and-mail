@@ -55,9 +55,7 @@ def _scrape_ig_and_mail_user_media(user, user_prefs, scraper):
 
     # Loop over all media
     new_media = []
-    for media in scraper.media_gen(user.username, max_count=config[
-        'settings']['max_media_count']):
-
+    for media in scraper.media_gen(user.username, max_count=config['settings']['max_media_count']):
         ig_media = db.create_ig_media_if_not_exist(media, user)
 
         if not ig_media:

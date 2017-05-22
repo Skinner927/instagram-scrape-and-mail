@@ -69,9 +69,11 @@ class IgMedia(Media):
 
     def __init__(self, json, ig_user):
         self.media_id = json['id']
-        self.type = MediaTypeEnum[json['type']]
+        if json['type'] == 'carousel':
+            self.type = MediaTypeEnum['image']
+        else:
+            self.type = MediaTypeEnum[json['type']]
         self.source = MediaSourceEnum.Instagram
-        self.media_id = json['id']
         self.url = json['url']
         self.json = dumps(json, ensure_ascii=False)
         self.user_id = ig_user.id
